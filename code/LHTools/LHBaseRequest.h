@@ -20,9 +20,12 @@ typedef void (^DataCompletionBlock)(id webData,BOOL isFinished);
 
 @property (nonatomic, copy) NSString *url;
 
--(NSDictionary *)getParams;
--(void)setDefault;
-
+/**
+ *  override subClass
+ *
+ *  @return  requestUrl
+ */
+-(NSString *)requestUrl;
 
 
 +(instancetype)createWithParams:(NSDictionary*)params;
@@ -40,9 +43,11 @@ typedef void (^DataCompletionBlock)(id webData,BOOL isFinished);
  */
 - (void)cancelRequest;
 
++ (void)cancelRequestWithUrl:(NSString *)url;
+
 //- (void)cancelRequestGroupId:(NSString*)groupId;
 //
-//- (void)cancelRequestAll;
++ (void)cancelRequestAll;
 @end
 
 

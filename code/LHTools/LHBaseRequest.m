@@ -22,7 +22,20 @@
 }
 -(void)setDefault
 {
-//    _url = URL_server(@"Product/AdvertsSearch");
+    _url = [self requestUrl];
+}
+
+-(NSString *)requestUrl
+{
+    return @"http://";
+}
+
+- (BOOL)requestValidator {
+    return YES;
+}
+
+- (BOOL)responseValidator {
+    return YES;
 }
 
 -(NSDictionary *)getParams
@@ -60,7 +73,15 @@
 //    [task cancelRequest];
 }
 
++ (void)cancelRequestWithUrl:(NSString *)url
+{
+    [HYBNetworking cancelRequestWithURL:url];
+}
 
++ (void)cancelRequestAll
+{
+    [HYBNetworking cancelAllRequest];
+}
 
 
 
