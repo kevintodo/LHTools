@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 
 //static NSString * const kRequestMethod_POST = @"POST";
@@ -39,7 +40,7 @@ typedef void (^DataCompletionBlock)(id webData,BOOL isFinished);
 - (void)postWithParams:(NSDictionary *)params requestCompleted:(DataCompletionBlock)respenseBlock;
 
 /**
- *  发送网络请求,在UIViewController dealloc 时 自动销毁
+ *  发送网络请求,在UIViewController dealloc 时 自动销毁，vc block使用@weak(self),@strong(self).
  *
  *  @param respenseBlock 请求完成回调
  */
