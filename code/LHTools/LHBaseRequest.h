@@ -39,6 +39,16 @@ typedef void (^DataCompletionBlock)(id webData,BOOL isFinished);
 - (void)postWithParams:(NSDictionary *)params requestCompleted:(DataCompletionBlock)respenseBlock;
 
 /**
+ *  发送网络请求,在UIViewController dealloc 时 自动销毁
+ *
+ *  @param respenseBlock 请求完成回调
+ */
+- (void)postRequestinVC:(UIViewController *)vc completed:(DataCompletionBlock)respenseBlock;
+
+
+//后续加入 本地缓存。
+
+/**
  *  取消请求
  */
 - (void)cancelRequest;

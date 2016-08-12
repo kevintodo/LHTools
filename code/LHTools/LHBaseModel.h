@@ -27,3 +27,7 @@
 -(NSMutableDictionary *)convertFromObjectIgnoredKeys:(NSArray *)keys;
 
 @end
+
+@interface NSObject(LHModel)
+
+@end

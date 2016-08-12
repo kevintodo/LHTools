@@ -67,6 +67,11 @@
     }];
 }
 
+- (void)postRequestinVC:(UIViewController *)vc completed:(DataCompletionBlock)respenseBlock
+{
+    
+}
+
 - (void)cancelRequest
 {
 //    HYBURLSessionTask *task;
