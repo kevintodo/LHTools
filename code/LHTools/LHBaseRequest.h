@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+@class LHBaseRespense;
 
 
 //static NSString * const kRequestMethod_POST = @"POST";
@@ -15,7 +16,7 @@
 //static NSString * const kRequestMethod_GET = @"GET";
 //static NSString * const kRequestMethod_file = @"file";
 
-typedef void (^DataCompletionBlock)(id webData,BOOL isFinished);
+typedef void (^DataCompletionBlock)(LHBaseRespense *webData,BOOL isFinished);
 
 @interface LHBaseRequest : NSObject
 
@@ -60,6 +61,16 @@ typedef void (^DataCompletionBlock)(id webData,BOOL isFinished);
 //
 + (void)cancelRequestAll;
 @end
+
+
+@interface LHBaseRespense : NSObject
+
+@property (nonatomic, assign) BOOL isFinished;
+@property (nonatomic, strong) NSError *error;
+@property (nonatomic, strong) id data;
+
+@end
+
 
 
 
